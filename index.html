@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Etudiant</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div id="logo">
+            Etudiant App
+        </div>
+
+        <nav>
+            <button id="add_etudiant">
+                Ajouter un Etudiant
+            </button>
+        </nav>
+    </header>
+
+
+    <section id="form_app" class="hide">
+        <form method="post" name="form" id="form_add" action="#">
+                <legend>
+                    Ajouter un Etudiant
+                </legend>
+
+                <p class="field">
+                    <label for="matricule">Matricule</label>
+                    <input type="text" name="matricule" placeholder="Entrer le matricule" required>
+                </p>
+                <p class="field">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" placeholder="Entrer le Nom" required>
+                </p>
+                <p class="field">
+                    <label for="tel">Telephone</label>
+                    <input type="tel" name="tel" placeholder="Entrer le Numero de Téléphone" required>
+                </p>
+                <p class="field_btn">
+                    <input type="submit" value="Enregistrer">
+                    <button type="button" class="annuler" id="annuler" >Annuler</button>
+                </p>
+        </form>
+
+    </section>
+
+    <section id="table_add">
+        <h1> LISTE DES ETUDIANTS</h1>
+
+        <table border="0">
+            <thead>
+                <th>ID</th>
+                <th>matricule</th>
+                <th>nom</th>
+                <th>Telephone</th>
+                <th>options</th>
+            </thead>
+            <tbody id="elements">
+                <tr id="element">
+                    <td>1</td>
+                    <td>123456</td>
+                    <td>lindsey</td>
+                    <td>0764467889</td>
+                    <td>
+                        <button class="btn_modifier" >Modifier</button>
+                        <button class="btn_supprimer" >supprimer</button>
+                    </td>
+                </tr>
+                <tr id="element">
+                    <td>1</td>
+                    <td>123456</td>
+                    <td>lena</td>
+                    <td>0764467889</td>
+                    <td>
+                        <button class="btn_modifier" >Modifier</button>
+                        <button class="btn_supprimer" >supprimer</button>
+                    </td>
+                </tr>
+                <tr id="element">
+                    <td>1</td>
+                    <td>123456</td>
+                    <td>schopen</td>
+                    <td>0764467889</td>
+                    <td>
+                        <button class="btn_modifier" >Modifier</button>
+                        <button class="btn_supprimer" >supprimer</button>
+                    </td>
+                </tr>
+                <tr id="element">
+                    <td>1</td>
+                    <td>123456</td>
+                    <td>carmelle</td>
+                    <td>0764467889</td>
+                    <td>
+                        <button class="btn_modifier" >Modifier</button>
+                        <button class="btn_supprimer" >supprimer</button>
+                    </td>
+                </tr>
+                <tr id="element">
+                    <td>1</td>
+                    <td>123456</td>
+                    <td>line</td>
+                    <td>0764467889</td>
+                    <td>
+                        <button class="btn_modifier" >Modifier</button>
+                        <button class="btn_supprimer" >supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
