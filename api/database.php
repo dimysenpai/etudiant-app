@@ -2,6 +2,7 @@
 define('DNS', 'mysql:host=localhost;dbname=etudiantdb');
 define('USER', 'root');
 define('PASS', '');
+define('PROLOGUE', '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>');
 
 function getConnect()
 {
@@ -33,4 +34,37 @@ function recover($req, $one = true)
         $datas = $req->fetchAll();
     }
     return $datas;
+}
+
+function getMessage($status, $content)
+{
+    $xml = PROLOGUE;
+    $xml = $xml . '<message>';
+    $xml = $xml . '<status>';
+    $xml = $xml . $status;
+    $xml = $xml . '</status>';
+    $xml = $xml . '<content>';
+    $xml = $xml . $content;
+    $xml = $xml . '</content>';
+    $xml = $xml . '</message>';
+
+    return $xml;
+}
+
+function etudiantToXML($etudiant)
+{
+    $xml = '';
+    $xml = $xml . '<etudiant id="' . $etudiant->idetudiant . '">';
+    $xml = $xml . '<matricule>';
+    $xml = $xml . $etudiant->matricule;
+    $xml = $xml . '</matricule>';
+    $xml = $xml . '<nom>';
+    $xml = $xml . $etudiant->nom;
+    $xml = $xml . '</nom>';
+    $xml = $xml . '<telephone>';
+    $xml = $xml . $etudiant->telephone;
+    $xml = $xml . '</telephone>';
+    $xml = $xml . '</etudiant>';
+
+    return $xml;
 }
